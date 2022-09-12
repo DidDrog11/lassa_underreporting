@@ -1,0 +1,61 @@
+---
+title: "Lassa fever cases suffer from severe under-reporting based on reported fatalities."
+author:
+  - name: "David Simons"
+    url: https://github.com/diddrog11/rodent_trapping
+    affiliation: The Royal Veterinary College, London, UK
+    affiliation_url: https://www.rvc.ac.uk
+    orcid_id: 0000-0001-9655-1656
+date: "`r Sys.Date()`"
+output:
+  # distill::distill_article:
+  #   self_contained: false
+  #   toc: true
+  # html_document
+  word_document
+bibliography: citations.bib
+categories:
+  - Lassa
+---
+
+```{r setup, include=FALSE, echo=FALSE}
+library(here)
+```
+
+# Abstract
+
+Lassa fever is a viral haemorrhagic fever endemic to eight West African countries. Symptomatic disease is expected to occur in 20% of those infected, typically from spillover from rodent hosts. The case fatality rate of this disease is not known but is expected to be around 15%, this can be used to estimate the under-reporting of severe cases. The reporting of expected cases is between 17 and 73%, leading to an estimated 2,919 unreported cases over the last decade. These findings highlight the current uncertainty around the morbidity and mortality burden of this neglected tropical disease.
+
+# Introduction
+
+Lassa fever, caused by *Lassa mammarenavirus* is an endemic zoonotic infectious disease, with outbreaks of human infection regularly recorded from eight West African countries [@balogun_lassa_2021]. The primary zoonotic reservoir (*Mastomys natalensis*) is thought to be responsible for the vast majority of cases in endemic regions with limited human-to-human transmission. Sporadic human cases are detected in non-endemic countries due to infected travellers. The majority of infections (~ 80%) are thought to produce minimal symptoms, while symptomatic disease can lead to severe symptoms requiring hospitalisation and death.
+
+The number of individuals at risk of Lassa fever is projected to increase due to increased human population, land-use change and climate change [@redding_geographical_2021]. Although, our understanding of the current impact across the endemic region is lacking due to limited diagnostics, surveillance and reporting. The degree of under-reporting of cases presenting to healthcare is unknown, while the reporting of deaths associated with notifiable diseases such as Lassa fever are typically more complete. The Case Fatality Rate (CFR) of Lassa fever is estimated at 15% with wide variability, two recent studies of hospitalised populations in Nigeria recorded CFRs of 14% and 31%, with a study in Sierra Leone estimating a CFR of 69% [@duvignaud_lassa_2021; @strampe_factors_2021; @shaffer_lassa_2014].
+
+The scale of under-reporting can be estimated from the number of cases that would be expected to produce the number of reported deaths under the assumption that these suffer from fewer limitations in reporting. The number of estimated cases can then be compared to the reported cases to produce a proportion of expected cases that are reported. This approach has been adopted during the current COVID-19 pandemic by organisation such as the World Health Organisation and can help to estimate the unrecognised burden of a disease.
+
+# Methods
+
+Reported Lassa fever cases were identified from a search of ProMED mail, WHO Weekly Bulletins on Outbreaks and Other Emergencies, Nigeria CDC situation reports and academic publications between 2012 and 2022. Where available information on the number of suspected cases, confirmed cases and deaths among confirmed cases were extracted.
+
+Three case-fatality rates were calculated using the number of reported deaths as the numerator and cases as the denominator, weighted by the number of reported cases. First, across all reports obtained, if the number of deaths exceeded the number of confirmed cases, suspected cases were used as the denominator. Second, Nigerian Centre for Disease Control (NCDC) data only were used, this includes prospective follow-up of confirmed cases and contact tracing, due to the impact of COVID-19 on healthcare seeking data were limited to prior to 2021. Third, using NCDC data limited to Edo and Ondo state between 2017 and 2021. The expected number of cases was calculated for reported deaths and compared to the number of reported cases. For records not reporting deaths, the expected number of confirmed cases was calculated using the derived under-reporting ratio for that country. CFR values of 0% and 100% were removed prior to calculating weighted mean CFRs.
+
+# Results
+
+A similar CFR was estimated using the first 2 approaches (method 1: mean = 25.6%, S.D. = 16.6% and method 2: mean = 25.2%, S.D. = 16.2%). Limiting contributing data for Nigerian states with higher surveillance (method 3) resulted in an estimated CFR of 16.5% (S.D. = 5%) (Fig 1A.). For the years 2018-2022 the number of reported cases from Nigeria were greater than expected cases based on CFR estimates from method 1 and 2, suggestive that a CFR of 16.5% (+/- 5%) is more representative of mortality following development of clinically severe disease. Applying this method of case estimation to other settings based on reported deaths found that between 17-73% of expected cases are reported (Fig 1B.).
+
+![A: Case Fatality Rate of Lassa fever following development of symptomatic disease and presenting to healthcare using three data sources for estimation. Method 1 uses all reported cases and deaths where the CFR is not equal to 0% or 100%. Method 2 uses all reported cases and deaths provided by NCDC data prior to 2021 where the CFR is not equal to 0% or 100%. Method 3 uses all reported cases and deaths from Edo and Ondo state from 2017-2021. The black line represents the weighted mean CFR. B: The difference between reported cases and expected cases derived from the number of reported deaths divided by the CFR](`r here("report","fig_1.png")`)
+
+As expected under-reporting is greatest in countries where Lassa fever surveillance is not routine, i.e., Ghana, Guinea and Togo (17%, 25% and 38% respectively), conversely in Nigeria and Sierra Leone where surveillance is more available, however, heterogeneous under-reporting was estimated at 73% and 57% respectively. During the last decade 6,076 cases of Lassa fever have been reported, the expected number of cases is 8,995, with an estimated 2,919 unreported cases.
+
+These results are sensitive to the number of reported deaths due to Lassa fever which are likely to suffer from variable reporting by country. As deaths are associated with individuals who present to clinical settings following symptoms this method is unable to estimate the absolute number of cases in a community. The CFR of Lassa fever has been treated as spatially non-varying, the impact of the known different viral strains on disease severity is currently unknown.
+
+# Conclusion
+
+The number of observed cases of Lassa fever is a significantly under-reported. This analysis has been performed to draw attention to the limitations in using reported case numbers when estimating the risk of disease in endemic countries and the risk of cases being exported from endemic countries.
+
+# Data availability
+
+All data is openly access. Analysis code and data to reproduce this analysis are available from https://github.com/DidDrog11/lassa_underreporting. Sources for included data are included in the available dataset.  
+
+# References
