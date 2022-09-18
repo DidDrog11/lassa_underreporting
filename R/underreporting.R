@@ -183,3 +183,4 @@ fig_1b <- shift_legend2(fig_1b)
 fig_1 <- plot_grid(plotlist = list(fig_1a, fig_1b), labels = c("A", "B"))
 
 save_plot(plot = fig_1, filename = here("report", "fig_1.png"), base_height = 10, base_width = 8)
+save_plot(plot = fig_1, filename = here("report", "fig_1.pdf"), base_height = 10, base_width = 8)
