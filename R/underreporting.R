@@ -96,7 +96,7 @@ fig_1a <- combined_cfr %>%
   annotate("rect", xmin = 0.254, xmax = 0.258, ymin = 1, ymax = 1.8) +
   annotate("rect", xmin = 0.250, xmax = 0.254, ymin = 2, ymax = 2.8) +
   annotate("rect", xmin = 0.163, xmax = 0.167, ymin = 3, ymax = 3.8) +
-  labs(x = "Case Fatality Rate (%)",
+  labs(x = "Case Fatality Rate",
        y = element_blank()) + 
   scale_fill_manual(values = c("#e41a1c", "#377eb8", "#984ea3")) +
   theme_bw() +
@@ -109,7 +109,6 @@ estimated_cases <- data %>%
   filter(!(region != "all")) %>% # only keep nigeria country totals
   ungroup() %>%
   mutate(cases = case_when(is.na(confirmed_cases) ~ suspected_cases,
-                           deaths_among_confirmed > confirmed_cases ~ suspected_cases,
                            TRUE ~ confirmed_cases)) %>%
   mutate(estimated_cases_1 = round(deaths_among_confirmed / combined_weighted_cfr$summary_cfr[combined_weighted_cfr$cfr_type == "summary_cfr"], 0),
          estimated_cases_2 = round(deaths_among_confirmed / combined_weighted_cfr$summary_cfr[combined_weighted_cfr$cfr_type == "ncdc_cfr"], 0),
